@@ -1,0 +1,99 @@
+2017-09-27 15:58:59 INFO  Main:29 - Student Name: Pepe
+2017-09-27 15:58:59 INFO  Main:30 - Student Name: Alberto
+2017-09-27 17:26:09 INFO  Main:26 - 1.1 Nombre
+2017-09-27 17:26:14 INFO  Main:28 - 1.2 Apellido
+2017-09-27 17:26:16 INFO  Main:30 - 1.3 Edad
+2017-09-27 17:26:17 INFO  Main:33 - Name: sd
+2017-09-27 17:26:17 INFO  Main:34 - Surname: ds
+2017-09-27 17:26:17 INFO  Main:35 - Age: 323
+2017-09-27 17:26:20 INFO  Main:42 - Invalid option
+2017-09-27 17:26:24 INFO  Main:26 - 1.1 Nombre
+2017-09-27 17:26:25 INFO  Main:28 - 1.2 Apellido
+2017-09-27 17:26:27 INFO  Main:30 - 1.3 Edad
+2017-09-27 17:26:29 INFO  Main:33 - Name: sds
+2017-09-27 17:26:29 INFO  Main:34 - Surname: 3dsd
+2017-09-27 17:26:29 INFO  Main:35 - Age: 3
+2017-09-27 17:26:30 INFO  Main:45 - 1. Agregar nuevo Alumno
+2017-09-27 17:26:30 INFO  Main:46 - 2. Salir
+2017-09-27 21:27:34 INFO  Main:26 - 1.1 Nombre
+2017-09-27 21:27:38 INFO  Main:28 - 1.2 Apellido
+2017-09-27 21:27:42 INFO  Main:30 - 1.3 Edad
+2017-09-27 21:27:45 INFO  Main:33 - Name: Nilla
+2017-09-27 21:27:45 INFO  Main:34 - Surname: Ruggiero
+2017-09-27 21:27:45 INFO  Main:35 - Age: 23
+2017-09-27 21:27:56 INFO  Main:42 - Invalid option
+2017-09-27 21:28:02 INFO  Main:26 - 1.1 Nombre
+2017-09-27 21:28:04 INFO  Main:28 - 1.2 Apellido
+2017-09-27 21:28:06 INFO  Main:30 - 1.3 Edad
+2017-09-27 21:28:07 INFO  Main:33 - Name: jj
+2017-09-27 21:28:07 INFO  Main:34 - Surname: wew
+2017-09-27 21:28:07 INFO  Main:35 - Age: 23
+2017-09-27 21:28:09 INFO  Main:45 - 1. Agregar nuevo Alumno
+2017-09-27 21:28:09 INFO  Main:46 - 2. Salir
+2017-09-27 22:14:49 INFO  Main:23 - 1.1 Nombre
+2017-09-27 22:14:51 INFO  Main:25 - 1.2 Apellido
+2017-09-27 22:14:53 INFO  Main:27 - 1.3 Edad
+2017-09-27 22:15:20 INFO  Main:23 - 1.1 Nombre
+2017-09-27 22:15:22 INFO  Main:25 - 1.2 Apellido
+2017-09-27 22:15:23 INFO  Main:27 - 1.3 Edad
+2017-09-27 22:15:24 INFO  Main:30 - Name: as
+2017-09-27 22:15:24 INFO  Main:31 - Surname: asa
+2017-09-27 22:15:24 INFO  Main:32 - Age: 23
+2017-09-27 22:15:28 INFO  Main:42 - 1. Agregar nuevo Alumno
+2017-09-27 22:15:28 INFO  Main:43 - 2. Salir
+2017-09-27 22:17:55 INFO  Main:23 - 1.1 Nombre
+2017-09-27 22:17:59 INFO  Main:25 - 1.2 Apellido
+2017-09-27 22:18:01 INFO  Main:27 - 1.3 Edad
+2017-09-27 22:18:02 INFO  Main:30 - Name: ds
+2017-09-27 22:18:02 INFO  Main:31 - Surname: sd
+2017-09-27 22:18:02 INFO  Main:32 - Age: 32
+2017-09-27 23:12:01 INFO  Main:23 - 1.1 Nombre
+2017-09-27 23:12:03 INFO  Main:25 - 1.2 Apellido
+2017-09-27 23:12:08 INFO  Main:27 - 1.3 Edad
+2017-09-27 23:12:10 INFO  Main:30 - Name: dsdsd
+2017-09-27 23:12:10 INFO  Main:31 - Surname: ddddd
+2017-09-27 23:12:10 INFO  Main:32 - Age: 23
+2017-09-27 23:13:39 INFO  Main:23 - Nombre:
+2017-09-27 23:13:43 INFO  Main:25 - Apellido:
+2017-09-27 23:13:46 INFO  Main:27 - Edad:
+2017-09-27 23:13:48 INFO  Main:30 - Name: Nilla
+2017-09-27 23:13:48 INFO  Main:31 - Surname: Ruggiero
+2017-09-27 23:13:48 INFO  Main:32 - Age: 32
+2017-09-27 23:13:58 INFO  Main:42 - 1. Agregar nuevo Alumno
+2017-09-27 23:13:58 INFO  Main:43 - 2. Salir
+2017-09-27 23:14:59 INFO  Main:18 - 1. Agregar nuevo Alumno
+2017-09-27 23:14:59 INFO  Main:19 - 2. Salir
+2017-09-27 23:15:04 INFO  Main:23 - Nombre:
+2017-09-27 23:15:07 INFO  Main:25 - Apellido:
+2017-09-27 23:15:10 INFO  Main:27 - Edad:
+2017-09-27 23:15:13 INFO  Main:30 - Name: Nilla
+2017-09-27 23:15:13 INFO  Main:31 - Surname: Ruggiero
+2017-09-27 23:15:13 INFO  Main:32 - Age: 32
+2017-09-27 23:15:13 INFO  Main:18 - 1. Agregar nuevo Alumno
+2017-09-27 23:15:13 INFO  Main:19 - 2. Salir
+2017-09-27 23:15:29 INFO  Main:42 - 1. Agregar nuevo Alumno
+2017-09-27 23:15:29 INFO  Main:43 - 2. Salir
+2017-09-27 23:17:28 INFO  Main:18 - 1. Agregar nuevo Alumno
+2017-09-27 23:17:28 INFO  Main:19 - 2. Salir
+2017-09-27 23:17:30 INFO  Main:23 - Nombre:
+2017-09-27 23:17:32 INFO  Main:25 - Apellido:
+2017-09-27 23:17:34 INFO  Main:27 - Edad:
+2017-09-27 23:17:35 INFO  Main:30 - Name: sds
+2017-09-27 23:17:35 INFO  Main:31 - Surname: qsas
+2017-09-27 23:17:35 INFO  Main:32 - Age: 23
+2017-09-27 23:17:35 INFO  Main:18 - 1. Agregar nuevo Alumno
+2017-09-27 23:17:35 INFO  Main:19 - 2. Salir
+2017-09-27 23:17:37 INFO  Main:42 - 1. Agregar nuevo Alumno
+2017-09-27 23:17:37 INFO  Main:43 - 2. Salir
+2017-09-27 23:20:54 INFO  Main:16 - 1. Agregar nuevo Alumno
+2017-09-27 23:20:54 INFO  Main:17 - 2. Salir
+2017-09-27 23:20:56 INFO  Main:21 - Nombre:
+2017-09-27 23:20:58 INFO  Main:23 - Apellido:
+2017-09-27 23:21:00 INFO  Main:25 - Edad:
+2017-09-27 23:21:02 INFO  Main:28 - Name: sds
+2017-09-27 23:21:02 INFO  Main:29 - Surname: 223
+2017-09-27 23:21:02 INFO  Main:30 - Age: 23
+2017-09-27 23:21:02 INFO  Main:16 - 1. Agregar nuevo Alumno
+2017-09-27 23:21:02 INFO  Main:17 - 2. Salir
+2017-09-27 23:21:04 INFO  Main:40 - 1. Agregar nuevo Alumno
+2017-09-27 23:21:04 INFO  Main:41 - 2. Salir
