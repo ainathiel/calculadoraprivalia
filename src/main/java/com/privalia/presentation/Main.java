@@ -25,7 +25,7 @@ public class Main {
 					case 1:
 						Student student = new Student();
 						setStudentData(reader, student);
-						printInformation(student);
+						printStudentData(student);
 						save(student);
 						break;
 					case 2:
@@ -52,7 +52,7 @@ public class Main {
 	}
 
 	@MethodInfo(author = "Nilla", revision = 1, comments = "Print student data", date = "01/10/2017")
-	private static void printInformation(Student student) {
+	private static void printStudentData(Student student) {
 		String newLine = "\n";
 		StringBuilder message = new StringBuilder();
 		message.append(newLine);

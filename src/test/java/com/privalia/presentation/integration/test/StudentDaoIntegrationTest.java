@@ -1,5 +1,6 @@
 package com.privalia.presentation.integration.test;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 import java.io.BufferedReader;
@@ -45,7 +46,16 @@ public class StudentDaoIntegrationTest {
 		bufferedReader.close();
 		fileReader.close();
 		
+		String[] studentData = line.split(",");
+		Student studentFromFile = new Student();
+		studentFromFile.setIdStudent(Integer.parseInt(studentData[0]));
+		studentFromFile.setName(studentData[1]);
+		studentFromFile.setSurname(studentData[2]);
+		studentFromFile.setAge(Integer.parseInt(studentData[3]));
+		
+		assertTrue(this.student.equals(studentFromFile));
 		assertEquals(this.student.toString(), line);
+		assertEquals(this.student.hashCode(), studentFromFile.hashCode());
 	}
 
 	static Student getStudent() {
