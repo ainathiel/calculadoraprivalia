@@ -14,13 +14,13 @@ public class StudentDao implements IDao<Student> {
 
 	@Override
 	public int add(Student student) throws IOException {
-		FileWriterUtil.create(path, student.toString());
+		FileWriterUtil.write(path, student.toString());
 		return student.getIdStudent();
 	}
 
 	@Override
 	public int addWithNio(Student student) throws IOException {
-		FileWriterUtil.createWithNio(path, student.toString());
+		FileWriterUtil.writeWithNio(path, student.toString());
 		return student.getIdStudent();
 	}
 }

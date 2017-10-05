@@ -25,7 +25,7 @@ public class FileReaderUtil {
 		Path path = Paths.get(fileName);
 		try (SeekableByteChannel byteChannel = Files.newByteChannel(path);) {
 			ByteBuffer byteBuffer = ByteBuffer.allocate(100);			
-			Charset charset = Charset.forName("US-ASCII");
+			Charset charset = Charset.forName("UTF-8");
 			while (byteChannel.read(byteBuffer) > 0) {
 				byteBuffer.rewind();
 				line = charset.decode(byteBuffer);

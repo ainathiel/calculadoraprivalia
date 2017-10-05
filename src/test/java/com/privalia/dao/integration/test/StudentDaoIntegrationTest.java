@@ -62,8 +62,7 @@ public class StudentDaoIntegrationTest {
 		IDao<Student> studentDao = new StudentDao();
 		studentDao.add(this.student);
 
-		String line = FileReaderUtil.read(this.path);
-		
+		String line = FileReaderUtil.read(this.path);		
 		String[] studentData = line.split(",");
 		Student studentFromFile = new Student(
 				Integer.parseInt(studentData[0]),

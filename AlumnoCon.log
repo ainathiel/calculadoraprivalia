@@ -1828,3 +1828,64 @@ UUID: d3e029df-a26c-4699-b755-c914d12c2792
 2017-10-04 23:52:37 INFO  Main:49 - MAIN MENU
 2017-10-04 23:52:37 INFO  Main:50 - 1. Add new student.
 2017-10-04 23:52:37 INFO  Main:51 - 2. Exit
+2017-10-05 12:17:18 INFO  Main:48 - -----------------------------
+2017-10-05 12:17:18 INFO  Main:49 - MAIN MENU
+2017-10-05 12:17:18 INFO  Main:50 - 1. Add new student.
+2017-10-05 12:17:18 INFO  Main:51 - 2. Exit
+2017-10-05 12:17:24 INFO  Main:48 - -----------------------------
+2017-10-05 12:17:24 INFO  Main:49 - MAIN MENU
+2017-10-05 12:17:24 INFO  Main:50 - 1. Add new student.
+2017-10-05 12:17:24 INFO  Main:51 - 2. Exit
+2017-10-05 12:18:08 INFO  Main:48 - -----------------------------
+2017-10-05 12:18:08 INFO  Main:49 - MAIN MENU
+2017-10-05 12:18:08 INFO  Main:50 - 1. Add new student.
+2017-10-05 12:18:08 INFO  Main:51 - 2. Exit
+2017-10-05 12:18:10 INFO  Main:77 - Name: 
+2017-10-05 12:18:12 INFO  Main:79 - Surname: 
+2017-10-05 12:18:15 INFO  Main:81 - Student Id: 
+2017-10-05 12:18:16 INFO  Main:83 - Age: 
+2017-10-05 12:18:17 INFO  Main:73 - 
+Name: nilla
+Surname: ruggiero
+Student Id: 23
+Age: 23
+UUID: f8eaa97c-2ea9-43dd-92ec-a6c6db56b6d4
+2017-10-05 12:18:17 INFO  Main:93 - Student data has been saved succesfully.
+2017-10-05 12:18:17 INFO  Main:48 - -----------------------------
+2017-10-05 12:18:17 INFO  Main:49 - MAIN MENU
+2017-10-05 12:18:17 INFO  Main:50 - 1. Add new student.
+2017-10-05 12:18:17 INFO  Main:51 - 2. Exit
+2017-10-05 12:18:18 INFO  Main:77 - Name: 
+2017-10-05 12:18:21 INFO  Main:79 - Surname: 
+2017-10-05 12:18:23 INFO  Main:81 - Student Id: 
+2017-10-05 12:18:24 INFO  Main:83 - Age: 
+2017-10-05 12:18:25 INFO  Main:73 - 
+Name: hugo
+Surname: rivero
+Student Id: 323
+Age: 23
+UUID: 82f76ad3-d606-4463-b690-364b86047b6e
+2017-10-05 12:18:25 INFO  Main:93 - Student data has been saved succesfully.
+2017-10-05 12:18:25 INFO  Main:48 - -----------------------------
+2017-10-05 12:18:25 INFO  Main:49 - MAIN MENU
+2017-10-05 12:18:25 INFO  Main:50 - 1. Add new student.
+2017-10-05 12:18:25 INFO  Main:51 - 2. Exit
+2017-10-05 12:18:26 INFO  Main:77 - Name: 
+2017-10-05 12:18:29 INFO  Main:79 - Surname: 
+2017-10-05 12:18:31 INFO  Main:81 - Student Id: 
+2017-10-05 12:18:32 INFO  Main:83 - Age: 
+2017-10-05 12:18:33 INFO  Main:73 - 
+Name: pepe
+Surname: re
+Student Id: 232
+Age: 23
+UUID: c93469f0-9e18-4b36-bca2-28ed2cac7f00
+2017-10-05 12:18:33 INFO  Main:93 - Student data has been saved succesfully.
+2017-10-05 12:18:33 INFO  Main:48 - -----------------------------
+2017-10-05 12:18:33 INFO  Main:49 - MAIN MENU
+2017-10-05 12:18:33 INFO  Main:50 - 1. Add new student.
+2017-10-05 12:18:33 INFO  Main:51 - 2. Exit
+2017-10-05 12:18:35 INFO  Main:48 - -----------------------------
+2017-10-05 12:18:35 INFO  Main:49 - MAIN MENU
+2017-10-05 12:18:35 INFO  Main:50 - 1. Add new student.
+2017-10-05 12:18:35 INFO  Main:51 - 2. Exit
