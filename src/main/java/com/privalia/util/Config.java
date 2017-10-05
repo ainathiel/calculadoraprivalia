@@ -7,25 +7,28 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 
 public class Config {
-	static final Logger logger = Logger.getLogger(File.class);
+	static final Logger logger = Logger.getLogger(FileWriterUtil.class);
+	static String path = null;
+	static Properties properties = null;
+
+	static {
+		properties = new Properties();
+		String fileName = "config.properties";
+		ClassLoader classLoader = Config.class.getClassLoader();
+		URL resource = classLoader.getResource(fileName);
+		try (FileInputStream fileInputStream = new FileInputStream(resource.getFile())) {
+			properties.load(fileInputStream);
+		} catch (IOException e) {
+			logger.error(e.getMessage());
+			throw new ExceptionInInitializerError(e);
+		}
+	}
 
 	private Config() {
 		throw new IllegalStateException("Utility class");
 	}
 
-	@MethodInfo(author = "Nilla", revision = 1, comments = "Get config", date = "01/10/2017")
-	public static String getValue(String key) throws IOException {
-		Properties properties = new Properties();
-		String fileName = "config.properties";
-		ClassLoader classLoader = Config.class.getClassLoader();
-		URL resource = classLoader.getResource(fileName);
-
-		try (FileInputStream fileInputStream = new FileInputStream(resource.getFile())) {
-			properties.load(fileInputStream);
-			return properties.getProperty(key);
-		} catch (IOException e) {
-			logger.error(e.getMessage());
-			throw e;
-		}
+	public static String getValue(String key) {
+		return properties.getProperty(key);
 	}
 }

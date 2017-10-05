@@ -2,9 +2,11 @@ package com.privalia.presentation;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.UUID;
+
 import org.apache.log4j.Logger;
 
-import com.privalia.dao.IStudentDao;
+import com.privalia.dao.IDao;
 import com.privalia.dao.StudentDao;
 import com.privalia.model.Student;
 import com.privalia.util.MethodInfo;
@@ -23,8 +25,7 @@ public class Main {
 					int menuOption = reader.nextInt();
 					switch (menuOption) {
 					case 1:
-						Student student = new Student();
-						setStudentData(reader, student);
+						Student student = setStudentData(reader);
 						printStudentData(student);
 						save(student);
 						break;
@@ -43,7 +44,6 @@ public class Main {
 		printMainMenu();
 	}
 
-	@MethodInfo(author = "Nilla", revision = 1, comments = "Print main menu", date = "01/10/2017")
 	private static void printMainMenu() {
 		logger.info("-----------------------------");
 		logger.info("MAIN MENU");
@@ -51,7 +51,6 @@ public class Main {
 		logger.info("2. Exit");
 	}
 
-	@MethodInfo(author = "Nilla", revision = 1, comments = "Print student data", date = "01/10/2017")
 	private static void printStudentData(Student student) {
 		String newLine = "\n";
 		StringBuilder message = new StringBuilder();
@@ -67,29 +66,30 @@ public class Main {
 		message.append(newLine);
 		message.append("Age: ");
 		message.append(Integer.toString(student.getAge()));
+		message.append(newLine);
+		message.append("UUID: ");
+		message.append(student.getUUID().toString());
 
 		logger.info(message.toString());
 	}
 
-	@MethodInfo(author = "Nilla", revision = 1, comments = "Set student data", date = "01/10/2017")
-	private static void setStudentData(Scanner reader, Student student) {
+	private static Student setStudentData(Scanner reader) {
 		logger.info("Name: ");
-		student.setName(reader.next());
+		String name = reader.next();
 		logger.info("Surname: ");
-		student.setSurname(reader.next());
+		String surname = reader.next();
 		logger.info("Student Id: ");
 		String inputId = reader.next();
-		student.setIdStudent(Integer.parseInt(inputId));
 		logger.info("Age: ");
 		String inputAge = reader.next();
-		student.setAge(Integer.parseInt(inputAge));
+
+		return new Student(Integer.parseInt(inputId), name, surname, Integer.parseInt(inputAge), UUID.randomUUID());
 	}
 
-	@MethodInfo(author = "Nilla", revision = 1, comments = "Add student data in a file.", date = "01/10/2017")
 	private static void save(Student student) {
 		try {
-			IStudentDao studentDao = new StudentDao();
-			studentDao.add(student);
+			IDao<Student> studentDao = new StudentDao();
+			studentDao.addWithNio(student);
 			logger.info("Student data has been saved succesfully.");
 		} catch (IOException e) {
 			logger.error("Error saving data");
