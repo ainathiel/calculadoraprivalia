@@ -4,30 +4,48 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.CharBuffer;
+import java.net.URL;
+import java.util.List;
+import java.util.Properties;
 import java.util.UUID;
 
 import org.junit.Test;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 
 import com.privalia.dao.IDao;
+import com.privalia.dao.INio;
 import com.privalia.dao.StudentDao;
 import com.privalia.model.Student;
 import com.privalia.util.Config;
 import com.privalia.util.FileReaderUtil;
 
 public class StudentDaoIntegrationTest {
-	Student student;
+	Student studentSent;
 	String path;
 	static final Logger logger = Logger.getLogger(StudentDaoIntegrationTest.class);
 
 	@Before
 	public void initialize() throws IOException {
-		this.student = getStudent();
+		this.studentSent = getStudent();
 		this.path = Config.getValue("students.path");
+	}
+	
+	@BeforeClass
+	public static void setup() {
+		Properties properties = new Properties();
+		String fileName = "config.properties";
+		ClassLoader classLoader = Config.class.getClassLoader();
+		URL resource = classLoader.getResource(fileName);
+		try (FileInputStream fileInputStream = new FileInputStream(resource.getFile())) {
+			properties.load(fileInputStream);
+		} catch (IOException e) {
+			logger.error(e.getMessage());
+		}
 	}
 	
 	@After
@@ -39,28 +57,59 @@ public class StudentDaoIntegrationTest {
 	}
 
 	@Test
-	public void testAddWithNio() throws IOException {
-		IDao<Student> studentDao = new StudentDao();
-		int studentId = studentDao.addWithNio(this.student);
-		CharBuffer line =FileReaderUtil.readWithNio(this.path);
-		String[] studentData = line.toString().trim().split(",");
-		Student studentFromFile = new Student(
-				Integer.parseInt(studentData[0]),
-				studentData[1],
-				studentData[2],
-				Integer.parseInt(studentData[3]),
-				UUID.fromString(studentData[4]));
+	public void testAddWithNioReadingWithNewByteChannel() throws IOException {
+		INio<Student> studentDao = new StudentDao();
+		int studentId = studentDao.addWithNio(this.studentSent);
+		List<String> lines = FileReaderUtil.readWithNioUsingNewByteChannel(this.path);
+		Student studentFromFile = null;
+		for(String line : lines) {
+			String[] studentData = line.toString().trim().split(",");
+			if(studentId == Integer.parseInt(studentData[0])) {
+				studentFromFile = new Student(
+					Integer.parseInt(studentData[0]),
+					studentData[1],
+					studentData[2],
+					Integer.parseInt(studentData[3]),
+					UUID.fromString(studentData[4]));
+				break;
+			}
+		}
 		
-		assertTrue(this.student.equals(studentFromFile));
+		assertTrue(this.studentSent.equals(studentFromFile));
 		assertEquals(studentId, studentFromFile.getIdStudent());
-		assertEquals(student.getUUID(), studentFromFile.getUUID());
-		assertEquals(this.student.hashCode(), studentFromFile.hashCode());
+		assertEquals(this.studentSent.getUUID(), studentFromFile.getUUID());
+		assertEquals(this.studentSent.hashCode(), studentFromFile.hashCode());
+	}
+
+	@Test
+	public void testAddWithNio() throws IOException {
+		INio<Student> studentDao = new StudentDao();
+		int studentId = studentDao.addWithNio(this.studentSent);
+		List<String> lines = FileReaderUtil.readWithNio(this.path);
+		Student studentFromFile = null;
+		for(String line : lines) {
+			String[] studentData = line.toString().trim().split(",");
+			if(studentId == Integer.parseInt(studentData[0])) {
+				studentFromFile = new Student(
+					Integer.parseInt(studentData[0]),
+					studentData[1],
+					studentData[2],
+					Integer.parseInt(studentData[3]),
+					UUID.fromString(studentData[4]));
+				break;
+			}
+		}
+		
+		assertTrue(this.studentSent.equals(studentFromFile));
+		assertEquals(studentId, studentFromFile.getIdStudent());
+		assertEquals(this.studentSent.getUUID(), studentFromFile.getUUID());
+		assertEquals(this.studentSent.hashCode(), studentFromFile.hashCode());
 	}
 
 	@Test
 	public void testAdd() throws IOException {
 		IDao<Student> studentDao = new StudentDao();
-		studentDao.add(this.student);
+		studentDao.add(this.studentSent);
 
 		String line = FileReaderUtil.read(this.path);		
 		String[] studentData = line.split(",");
@@ -71,60 +120,18 @@ public class StudentDaoIntegrationTest {
 				Integer.parseInt(studentData[3]),
 				UUID.fromString(studentData[4]));
 		
-		assertTrue(this.student.equals(studentFromFile));
-		assertEquals(this.student.toString(), line);
-		assertEquals(this.student.hashCode(), studentFromFile.hashCode());
+		assertTrue(this.studentSent.equals(studentFromFile));
+		assertEquals(this.studentSent.toString(), line);
+		assertEquals(this.studentSent.hashCode(), studentFromFile.hashCode());
 	}
-	
-	
-	/*public void testAddClase() throws IOException {
-		Student alumnoEnviado = new Student(1, "Giuseppe", "Pesce", 43);
-		StudentDao studentDao = new StudentDao();
-		studentDao.add(alumnoEnviado);
-		
-		Student alumnoEncontrado = findAlumno(alumnoEnviado.getIdStudent());
-		assertEquals(alumnoEncontrado, alumnoEnviado);
-	}*/
 
 	static Student getStudent() {
 		Student student = new Student();
-		student.setName("Jordi");
-		student.setSurname("Castellanos");
+		student.setName("Fernando");
+		student.setSurname("Alonso");
 		student.setAge(23);
 		student.setIdStudent(239087);
 
 		return student;
 	}
-	
-	/** Código clase */
-	/*private Student findAlumno(int idAlumno) throws IOException {
-		File fichero = new File(this.path);//File.getFile(); //Implemetar getFile, es estático y está en memoria
-		String[] alumnostring = null;
-		boolean encontrado = false;
-		
-		try(Scanner s = new Scanner (fichero)) {
-			while (s.hasNextLine() || encontrado == false) {
-				String linea = s.nextLine();
-				alumnostring = linea.split(",");
-				if(Integer.parseInt(alumnostring[0]) == idAlumno) {
-					encontrado = true;
-				}
-			}
-		} catch (IOException e) {
-			logger.error(e.getMessage());
-			throw e;
-		}
-		
-		Student studentFromFile = new Student();
-		if(encontrado == true) {
-			studentFromFile.setIdStudent(Integer.parseInt(alumnostring[0].trim()));
-			studentFromFile.setName(alumnostring[1].trim());
-			studentFromFile.setSurname(alumnostring[2].trim());
-			studentFromFile.setAge(Integer.parseInt(alumnostring[3].trim()));
-		} else {
-			studentFromFile = null;
-		}
-		
-		return studentFromFile;
-	}*/
 }

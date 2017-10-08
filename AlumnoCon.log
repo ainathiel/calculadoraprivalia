@@ -1889,3 +1889,28 @@ UUID: c93469f0-9e18-4b36-bca2-28ed2cac7f00
 2017-10-05 12:18:35 INFO  Main:49 - MAIN MENU
 2017-10-05 12:18:35 INFO  Main:50 - 1. Add new student.
 2017-10-05 12:18:35 INFO  Main:51 - 2. Exit
+2017-10-08 08:56:27 INFO  Main:48 - -----------------------------
+2017-10-08 08:56:27 INFO  Main:49 - MAIN MENU
+2017-10-08 08:56:27 INFO  Main:50 - 1. Add new student.
+2017-10-08 08:56:27 INFO  Main:51 - 2. Exit
+2017-10-08 08:56:29 INFO  Main:77 - Name: 
+2017-10-08 08:56:30 INFO  Main:79 - Surname: 
+2017-10-08 08:56:31 INFO  Main:81 - Student Id: 
+2017-10-08 08:56:33 INFO  Main:83 - Age: 
+2017-10-08 08:56:34 INFO  Main:73 - 
+Name: 232
+Surname: 23
+Student Id: 323
+Age: 23
+UUID: 32c6186d-9a30-43f7-a8de-7778167e94eb
+2017-10-08 08:56:34 INFO  Main:93 - Student data has been saved succesfully.
+2017-10-08 08:56:34 INFO  Main:48 - -----------------------------
+2017-10-08 08:56:34 INFO  Main:49 - MAIN MENU
+2017-10-08 08:56:34 INFO  Main:50 - 1. Add new student.
+2017-10-08 08:56:34 INFO  Main:51 - 2. Exit
+2017-10-08 08:56:36 INFO  Main:48 - -----------------------------
+2017-10-08 08:56:36 INFO  Main:49 - MAIN MENU
+2017-10-08 08:56:36 INFO  Main:50 - 1. Add new student.
+2017-10-08 08:56:36 INFO  Main:51 - 2. Exit
+2017-10-08 10:37:40 INFO  StudentDaoIntegrationTest:46 - hola
+2017-10-08 10:38:21 INFO  FileWriterUtil:20 - hola

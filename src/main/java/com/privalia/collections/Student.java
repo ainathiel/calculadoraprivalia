@@ -1,13 +1,12 @@
-package com.privalia.model;
+package com.privalia.collections;
 
-import java.util.UUID;
-
-public class Student extends PrivaliaObject {
+public class Student {
 
 	private int idStudent;
 	private String name;
 	private String surname;
 	private int age;
+	private Address address;
 
 	static int numero;
 
@@ -16,11 +15,22 @@ public class Student extends PrivaliaObject {
 	}
 	
 	public Student() {
-		super();
+
+	}
+	
+	public Student(Address address) {
+		this.address = address;
+	}
+	
+	public Student(Student student, Address address) {
+		this.address = address;
+		this.idStudent = student.getIdStudent();
+		this.name = student.getName();
+		this.surname = student.getSurname();
+		this.age = student.getAge();
 	}
 
-	public Student(int idStudent, String name, String surname, int age, UUID uuid) {
-		super(uuid);
+	public Student(int idStudent, String name, String surname, int age) {
 		this.idStudent = idStudent;
 		this.name = name;
 		this.surname = surname;
@@ -149,8 +159,6 @@ public class Student extends PrivaliaObject {
 		builder.append(surname);
 		builder.append(",");
 		builder.append(age);
-		builder.append(",");
-		builder.append(super.getUUID());
 		return builder.toString();
 	}
 }

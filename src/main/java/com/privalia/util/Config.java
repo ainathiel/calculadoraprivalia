@@ -8,7 +8,6 @@ import org.apache.log4j.Logger;
 
 public class Config {
 	static final Logger logger = Logger.getLogger(FileWriterUtil.class);
-	static String path = null;
 	static Properties properties = null;
 
 	static {

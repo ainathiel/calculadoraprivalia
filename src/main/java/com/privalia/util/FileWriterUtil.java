@@ -38,9 +38,9 @@ public class FileWriterUtil {
 	}
 	
 	public static void writeWithNio(String fileName, String line) throws IOException {
-		create(fileName);
 		Path path = Paths.get(fileName);
-		try(BufferedWriter writer = Files.newBufferedWriter(path, Charset.forName("UTF-8"), StandardOpenOption.APPEND)) {
+		try(BufferedWriter writer = Files.newBufferedWriter(path, Charset.forName("UTF-8"), 
+				StandardOpenOption.APPEND, StandardOpenOption.CREATE)) {
 			writer.write(line);
 			writer.newLine();
 			writer.flush();
