@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
 import java.util.UUID;
@@ -123,6 +124,13 @@ public class StudentDaoIntegrationTest {
 		assertTrue(this.studentSent.equals(studentFromFile));
 		assertEquals(this.studentSent.toString(), line);
 		assertEquals(this.studentSent.hashCode(), studentFromFile.hashCode());
+	}
+	
+	@Test
+	public void testAddWithDataBase() throws SQLException {
+		IDao<Student> studentDao = new StudentDao();
+		int idStudent = studentDao.addWithDataBase(this.studentSent);
+		assertTrue(idStudent > 0);
 	}
 
 	static Student getStudent() {

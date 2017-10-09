@@ -1,5 +1,7 @@
 package com.privalia.collections;
 
+import java.util.List;
+
 public class Student {
 
 	private int idStudent;
@@ -7,6 +9,36 @@ public class Student {
 	private String surname;
 	private int age;
 	private Address address;
+	private List<Teacher> teacher;
+
+	
+	/**
+	 * @return the address
+	 */
+	public Address getAddress() {
+		return address;
+	}
+
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	/**
+	 * @return the teacher
+	 */
+	public List<Teacher> getTeacher() {
+		return teacher;
+	}
+
+	/**
+	 * @param teacher the teacher to set
+	 */
+	public void setTeacher(List<Teacher> teacher) {
+		this.teacher = teacher;
+	}
 
 	static int numero;
 
